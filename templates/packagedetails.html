@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Package Info</title>
+	<link rel="stylesheet" href="{% static 'css/packagedetails.css' %}">
+</head>
+<body>
+	<nav>
+		<div>
+			<h3>Oceanic Express</h3>
+			<a href="/"><h3>Home</h3></a>|
+			<a href="mailto:officialoceanicexpress@gmail.com?subject=Hello%20from%20the%20website&body=Hi,%20I%20have%20a%20question%20about..."><h3>Contact Us</h3></a>|
+			<a href="/login"><h3>Login</h3></a>|
+			<a href="/signup"><h3>Register</h3></a>
+		</div>
+		
+	</nav>
+
+	<main>
+		<section id="dd">
+			<h3>Travel History</h3>
+			<hr>
+			<div style="background-color: none;">
+				<h4>From:</h4>
+				<text>{{packageinfo.Dispatch_Location}}<br>
+				{{packageinfo.Dispatch_Date}}</text>
+			</div>
+
+			<div style="background-color: none;">
+				<h4>Package Received By Oceanic Express:</h4>
+				<text>Location<br>
+				{{packageinfo.Dispatch_Date}}</text>
+			</div>
+
+			<div style="background-color: hsl(32, 100%, 50%); color: white;">
+				<h4>In Transit:</h4>
+				<text>{{packageinfo.Current_Location}}</text>
+			</div>
+
+			<div style="background-color: none;">
+				<h4>Out For Delivery:</h4>
+				<text>{{packageinfo.Shipment_Destination}}</text>
+			</div>
+
+			<div style="background-color: none;">
+				<h4>Delivered:</h4>
+				<text>{{packageinfo.Receiver_Address}}<br><br>
+				Scheduled delivery date<br>
+				{{packageinfo.Expected_Delivery_Date}}</text>
+			</div>
+		</section>
+
+		<section id="pkgd">
+			<header>Package ID:{{packageinfo.Tracking_Id}}</header>
+			
+
+			<section id="sum">
+				<div>
+					Dispatch Date:
+					<h3>{{packageinfo.Dispatch_Date}}</h3>
+					<hr>
+					<h4>{{packageinfo.Dispatch_Location}}</h4>
+				</div>
+
+				<div>
+					Current Location: 
+					<h3>{{packageinfo.Shipment_Status}}</h3>
+					<hr>
+					<h4>{{packageinfo.Current_Location}}</h4>
+				</div>
+
+				<div>
+					Sheduled Delivery Date:
+					<h3>{{packageinfo.Expected_Delivery_Date}}</h3>
+					<hr>
+					<h4>{{packageinfo.Shipment_Destination}}</h4>
+				</div>
+			</section>
+
+			<h2 style="padding-top: 5%;">Shipment Info</h2>
+			<hr>
+			<section id="shipf">
+				<div>
+					<table>
+						<tr>
+						  <th colspan="2">Sender Info</th>
+						</tr>
+						<tr>
+						  <td>Name:</td>
+						  <td>{{packageinfo.Sender_FullName}}</td>
+						</tr>
+						<tr>
+						  <td>Contact:</td>
+						  <td>{{packageinfo.Sender_Contact}}</td>
+						</tr>
+						<tr>
+						  <td>Email:</td>
+						  <td>{{packageinfo.Sender_Email}}</td>
+						</tr>
+						<tr>
+						  <td>Location:</td>
+						  <td>{{packageinfo.Sender_Address}}</td>
+						</tr>
+					</table>
+				</div>
+
+				<div>
+					<table>
+						<tr>
+						  <th colspan="2">Package Info</th>
+						</tr>
+						<tr>
+						  <td>Description:</td>
+						  <td>{{packageinfo.Package_Description}}</td>
+						</tr>
+						<tr>
+						  <td>Quantity:</td>
+						  <td>{{packageinfo.Quantity}}</td>
+						</tr>
+						<tr>
+						  <td>Weight:</td>
+						  <td>{{packageinfo.Weight}}kg</td>
+						</tr>
+						<tr>
+						  <td>Condition:</td>
+						  <td>{{packageinfo.Package_Condition}}</td>
+						</tr>
+					</table>
+				</div>
+
+				<div>
+					<table>
+						<tr>
+						  <th colspan="2">Receiver Info</th>
+						</tr>
+						<tr>
+						  <td>Name:</td>
+						  <td>{{packageinfo.Receiver_FullName}}</td>
+						</tr>
+						<tr>
+						  <td>Contact:</td>
+						  <td>{{packageinfo.Receiver_Contact}}</td>
+						</tr>
+						<tr>
+						  <td>Email:</td>
+						  <td>{{packageinfo.Receiver_Email}}</td>
+						</tr>
+						<tr>
+						  <td>Location:</td>
+						  <td>{{packageinfo.Receiver_Address}}</td>
+						</tr>
+					</table>
+				</div>
+			</section>
+		</section>		
+	</main>
+
+	<footer>
+		<div>
+			© OceanicExpress 1995-2023
+		</div>
+
+		<div id="links">
+			<a href="/terms">Terms of Use</a>  |
+			<a href="/privacy">Privacy and Security</a> 
+		</div>
+	</footer>
+</body>
+</html>
