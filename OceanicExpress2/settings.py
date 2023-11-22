@@ -84,7 +84,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"]= dj_database_url.parse("postgres://oceanicexpress_user:t9dhZBrQlaV4JI3KIQMCAd6RQpZXUNpf@dpg-cjkig7nv9s6c73ci63ig-a.oregon-postgres.render.com/oceanicexpress") 
+DATABASES["default"]= dj_database_url.parse("postgres://oceanicexpress_x1bi_user:7vdtNbabja0OpFz5yrLc7KSm4I7zXxwX@dpg-clelc3415k1s73f44s4g-a.oregon-postgres.render.com/oceanicexpress_x1bi") 
 
 
 
